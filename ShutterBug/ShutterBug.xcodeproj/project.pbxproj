@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10F042B714ED918D00716295 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F042B614ED918D00716295 /* UIKit.framework */; };
+		10F042B914ED918D00716295 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F042B814ED918D00716295 /* Foundation.framework */; };
+		10F042BB14ED918D00716295 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F042BA14ED918D00716295 /* CoreGraphics.framework */; };
+		10F042C114ED918D00716295 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 10F042BF14ED918D00716295 /* InfoPlist.strings */; };
+		10F042C314ED918D00716295 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F042C214ED918D00716295 /* main.m */; };
+		10F042C714ED918D00716295 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F042C614ED918D00716295 /* AppDelegate.m */; };
+		10F042CA14ED918D00716295 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F042C814ED918D00716295 /* MainStoryboard_iPhone.storyboard */; };
+		10F042CD14ED918D00716295 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F042CB14ED918D00716295 /* MainStoryboard_iPad.storyboard */; };
+		10F042D814ED920F00716295 /* FlickerPhotoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F042D714ED920F00716295 /* FlickerPhotoTableViewController.m */; };
+		10F042DC14ED938600716295 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F042DA14ED938600716295 /* FlickrFetcher.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		10F042B214ED918D00716295 /* ShutterBug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShutterBug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10F042B614ED918D00716295 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		10F042B814ED918D00716295 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		10F042BA14ED918D00716295 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		10F042BE14ED918D00716295 /* ShutterBug-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShutterBug-Info.plist"; sourceTree = "<group>"; };
+		10F042C014ED918D00716295 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		10F042C214ED918D00716295 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		10F042C414ED918D00716295 /* ShutterBug-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShutterBug-Prefix.pch"; sourceTree = "<group>"; };
+		10F042C514ED918D00716295 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		10F042C614ED918D00716295 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		10F042C914ED918D00716295 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		10F042CC14ED918D00716295 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		10F042D614ED920F00716295 /* FlickerPhotoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickerPhotoTableViewController.h; sourceTree = "<group>"; };
+		10F042D714ED920F00716295 /* FlickerPhotoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickerPhotoTableViewController.m; sourceTree = "<group>"; };
+		10F042D914ED938600716295 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		10F042DA14ED938600716295 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		10F042DB14ED938600716295 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10F042AF14ED918D00716295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10F042B714ED918D00716295 /* UIKit.framework in Frameworks */,
+				10F042B914ED918D00716295 /* Foundation.framework in Frameworks */,
+				10F042BB14ED918D00716295 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10F042A714ED918D00716295 = {
+			isa = PBXGroup;
+			children = (
+				10F042BC14ED918D00716295 /* ShutterBug */,
+				10F042B514ED918D00716295 /* Frameworks */,
+				10F042B314ED918D00716295 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		10F042B314ED918D00716295 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10F042B214ED918D00716295 /* ShutterBug.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10F042B514ED918D00716295 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10F042B614ED918D00716295 /* UIKit.framework */,
+				10F042B814ED918D00716295 /* Foundation.framework */,
+				10F042BA14ED918D00716295 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		10F042BC14ED918D00716295 /* ShutterBug */ = {
+			isa = PBXGroup;
+			children = (
+				10F042C814ED918D00716295 /* MainStoryboard_iPhone.storyboard */,
+				10F042CB14ED918D00716295 /* MainStoryboard_iPad.storyboard */,
+				10F042D914ED938600716295 /* FlickrFetcher.h */,
+				10F042DA14ED938600716295 /* FlickrFetcher.m */,
+				10F042DB14ED938600716295 /* FlickrAPIKey.h */,
+				10F042D614ED920F00716295 /* FlickerPhotoTableViewController.h */,
+				10F042D714ED920F00716295 /* FlickerPhotoTableViewController.m */,
+				10F042BD14ED918D00716295 /* Supporting Files */,
+			);
+			path = ShutterBug;
+			sourceTree = "<group>";
+		};
+		10F042BD14ED918D00716295 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				10F042C514ED918D00716295 /* AppDelegate.h */,
+				10F042C614ED918D00716295 /* AppDelegate.m */,
+				10F042BE14ED918D00716295 /* ShutterBug-Info.plist */,
+				10F042BF14ED918D00716295 /* InfoPlist.strings */,
+				10F042C214ED918D00716295 /* main.m */,
+				10F042C414ED918D00716295 /* ShutterBug-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10F042B114ED918D00716295 /* ShutterBug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10F042D314ED918D00716295 /* Build configuration list for PBXNativeTarget "ShutterBug" */;
+			buildPhases = (
+				10F042AE14ED918D00716295 /* Sources */,
+				10F042AF14ED918D00716295 /* Frameworks */,
+				10F042B014ED918D00716295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShutterBug;
+			productName = ShutterBug;
+			productReference = 10F042B214ED918D00716295 /* ShutterBug.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10F042A914ED918D00716295 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 10F042AC14ED918D00716295 /* Build configuration list for PBXProject "ShutterBug" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 10F042A714ED918D00716295;
+			productRefGroup = 10F042B314ED918D00716295 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10F042B114ED918D00716295 /* ShutterBug */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10F042B014ED918D00716295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10F042C114ED918D00716295 /* InfoPlist.strings in Resources */,
+				10F042CA14ED918D00716295 /* MainStoryboard_iPhone.storyboard in Resources */,
+				10F042CD14ED918D00716295 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10F042AE14ED918D00716295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10F042C314ED918D00716295 /* main.m in Sources */,
+				10F042C714ED918D00716295 /* AppDelegate.m in Sources */,
+				10F042D814ED920F00716295 /* FlickerPhotoTableViewController.m in Sources */,
+				10F042DC14ED938600716295 /* FlickrFetcher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		10F042BF14ED918D00716295 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10F042C014ED918D00716295 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		10F042C814ED918D00716295 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10F042C914ED918D00716295 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		10F042CB14ED918D00716295 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10F042CC14ED918D00716295 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		10F042D114ED918D00716295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10F042D214ED918D00716295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10F042D414ED918D00716295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShutterBug/ShutterBug-Prefix.pch";
+				INFOPLIST_FILE = "ShutterBug/ShutterBug-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		10F042D514ED918D00716295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShutterBug/ShutterBug-Prefix.pch";
+				INFOPLIST_FILE = "ShutterBug/ShutterBug-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10F042AC14ED918D00716295 /* Build configuration list for PBXProject "ShutterBug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10F042D114ED918D00716295 /* Debug */,
+				10F042D214ED918D00716295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10F042D314ED918D00716295 /* Build configuration list for PBXNativeTarget "ShutterBug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10F042D414ED918D00716295 /* Debug */,
+				10F042D514ED918D00716295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10F042A914ED918D00716295 /* Project object */;
+}
