@@ -8,6 +8,11 @@
 
 #import "FlickerPhotoTableViewController.h"
 #import "FlickrFetcher.h"
+#import "MapViewController.h"
+#import "FlickrPhotoAnnotation.h"
+
+@interface FlickerPhotoTableViewController() <MapViewControllerDelegate>
+@end
 
 @implementation FlickerPhotoTableViewController
 
@@ -29,9 +34,33 @@
     dispatch_release(downloadQueue);
 }
 
--(void)setPhotos:(NSArray *)photos {
+- (NSArray *)mapAnnoations {
+    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.photos count]];
+    for (NSDictionary *photo in self.photos) {
+        [annotations addObject:[FlickrPhotoAnnotation annotationForPhoto:photo]];
+    }
+    return annotations;
+}
+
+- (void)updateSplitViewDetail {
+    id detail = [self.splitViewController.viewControllers lastObject];
+    if ([detail isKindOfClass:[MapViewController class]]) {
+        MapViewController *mapVC = (MapViewController *)detail;
+        mapVC.delegate = self;
+        mapVC.annotations = [self mapAnnoations];
+    }
+}
+- (UIImage *)mapViewController:(MapViewController *)sender imageForAnnoation:(id<MKAnnotation>)annotation {
+    FlickrPhotoAnnotation *fpa = (FlickrPhotoAnnotation *)annotation;
+    NSURL *url = [FlickrFetcher urlForPhoto:fpa.photo format:FlickrPhotoFormatSquare];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return [UIImage imageWithData:data];
+}
+
+- (void)setPhotos:(NSArray *)photos {
     if (photos != _photos) {
         _photos = photos;
+        [self updateSplitViewDetail];
         [self.tableView reloadData];
     }
 }

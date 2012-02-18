@@ -63,9 +63,9 @@
     // Configure the cell...
     NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
     NSString *title = [photo objectForKey:FLICKR_PHOTO_TITLE];
-    NSString *subtitle = [photo objectForKey:FLICKR_PHOTO_DESCRIPTION];
+    NSString *subtitle = [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
     if ([title isEqualToString:@""]) {
-        title = [photo objectForKey:FLICKR_PHOTO_DESCRIPTION];
+        title = [subtitle copy];
         subtitle = @"";
         if ([title isEqualToString:@""]) {
             title = @"Unknown";
