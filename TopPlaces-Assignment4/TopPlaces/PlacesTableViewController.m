@@ -10,49 +10,31 @@
 #import "FlickrFetcher.h"
 #import "PhotosTableViewController.h"
 #import "GCD.h"
-#import "PlaceAnnotation.h"
-#import "MapViewController.h"
 
 @implementation PlacesTableViewController
 
 @synthesize places = _places;
 
-
-- (NSArray *)mapAnnoations {
-    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.places count]];
-    for (NSDictionary *place in self.places) {
-        [annotations addObject:[PlaceAnnotation annotationForPlace:place]];
-    }
-    return annotations;
+- (NSArray *)cityAndLocationForPlace:(NSDictionary *)place {
+    NSString *content = [place objectForKey:FLICKR_PLACE_NAME];
+    int commaLocation = [content rangeOfString:@","].location;
+    NSString *city = [content substringToIndex:commaLocation];
+    NSString *location = [content substringFromIndex:commaLocation + 2];
+    return [[NSArray alloc] initWithObjects:city, location, nil];
 }
 
-+ (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender place:(NSDictionary *)place {
-    NSString *city = [[FlickrFetcher cityAndLocationForPlace:place] objectAtIndex:0];
-    
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [spinner startAnimating];
-    
-    UIView *titleView = [segue.destinationViewController navigationItem].titleView;
-    [segue.destinationViewController navigationItem].titleView = spinner;
-    
-    [GCD download:^{
-        NSArray *photos = [FlickrFetcher photosInPlace:place maxResults:50];
-        [GCD main:^{
-            [spinner stopAnimating];
-            [segue.destinationViewController setPhotos:photos];
-            [segue.destinationViewController navigationItem].titleView = titleView;
-            [segue.destinationViewController assignTitle:city];
-        }];
-    }];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"Top Place"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         id place = [self.places objectAtIndex:indexPath.row];
-        [PlacesTableViewController prepareForSegue:segue sender:sender place:place];
-    } else if ([segue.identifier isEqualToString:@"PlacesMap"]) {
-        [segue.destinationViewController setAnnotations:[self mapAnnoations]];
+        NSString *city = [[self cityAndLocationForPlace:place] objectAtIndex:0];
+        [GCD download:^{
+            NSArray *photos = [FlickrFetcher photosInPlace:place maxResults:50];
+            [GCD main:^{
+                [segue.destinationViewController setPhotos:photos];
+                [segue.destinationViewController assignTitle:city];
+            }];
+        }];
     }
 }
 
@@ -69,17 +51,9 @@
 {
     [super viewWillAppear:animated];
     
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [spinner startAnimating];
-
-    UIView *titleView = self.navigationItem.titleView;
-    self.navigationItem.titleView = spinner;
-    
     [GCD download:^{
         NSArray *places = [FlickrFetcher topPlaces];
         [GCD main:^{
-            [spinner stopAnimating];
-            self.navigationItem.titleView = titleView;
             self.places = places;
         }];
     }];
@@ -88,7 +62,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
@@ -110,7 +84,7 @@
     
     // Configure the cell...
     NSDictionary *place = [self.places objectAtIndex:indexPath.row];
-    NSArray *cityAndLocation = [FlickrFetcher cityAndLocationForPlace:place];
+    NSArray *cityAndLocation = [self cityAndLocationForPlace:place];
     cell.textLabel.text = [cityAndLocation objectAtIndex:0];
     cell.detailTextLabel.text = [cityAndLocation objectAtIndex:1];
     

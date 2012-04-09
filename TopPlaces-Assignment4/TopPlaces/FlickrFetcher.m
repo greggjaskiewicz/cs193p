@@ -12,15 +12,6 @@
 
 @implementation FlickrFetcher
 
-+ (NSArray *)cityAndLocationForPlace:(NSDictionary *)place {
-    NSString *content = [place objectForKey:FLICKR_PLACE_NAME];
-    int commaLocation = [content rangeOfString:@","].location;
-    NSString *city = [content substringToIndex:commaLocation];
-    NSString *location = [content substringFromIndex:commaLocation + 2];
-    return [[NSArray alloc] initWithObjects:city, location, nil];
-}
-
-
 + (NSDictionary *)executeFlickrFetch:(NSString *)query
 {
     query = [NSString stringWithFormat:@"%@&format=json&nojsoncallback=1&api_key=%@", query, FlickrAPIKey];

@@ -11,5 +11,4 @@
 
 @interface PlacesTableViewController : UITableViewController
 @property (nonatomic, strong) NSArray *places;
-+ (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender place:(NSDictionary *)place;
 @end

@@ -22,7 +22,6 @@ typedef enum {
 } FlickrPhotoFormat;
 
 @interface FlickrFetcher : NSObject
-+ (NSArray *)cityAndLocationForPlace:(NSDictionary *)place;
 + (NSArray *)recentGeoreferencedPhotos;
 + (NSArray *)topPlaces;
 + (NSArray *)photosInPlace:(NSDictionary *)place maxResults:(int)maxResults;

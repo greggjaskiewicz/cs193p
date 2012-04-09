@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SplitViewBarButtonItemPresenter.h"
 
 #define RECENT_PHOTOS_KEY @"PhotoViewController.RecentPhotos"
 
-@interface PhotoViewController : UIViewController <SplitViewBarButtonItemPresenter>
+@interface PhotoViewController : UIViewController
 @property (nonatomic, strong) NSDictionary *photo; // flickr photo
 
 @end

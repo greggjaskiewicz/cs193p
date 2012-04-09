@@ -10,39 +10,16 @@
 #import "FlickrFetcher.h"
 #import "GCD.h"
 #import "PhotoViewController.h"
-#import "PhotosMapViewController.h"
-#import "FlickrPhotoAnnotation.h"
-#import "PhotoCache.h"
-
-
-@interface PhotosTableViewController() <PhotosMapViewControllerDelegate>
-@end
 
 @implementation PhotosTableViewController
 
 @synthesize photos = _photos;
-
-- (UIImage *)photosMapViewController:(PhotosMapViewController *)sender imageForAnnoation:(id<MKAnnotation>)annotation {
-    FlickrPhotoAnnotation *fpa = (FlickrPhotoAnnotation *)annotation;
-    return [UIImage imageWithData:[PhotoCache fetchThumbnail:fpa.photo]];
-}
-
-- (NSArray *)mapAnnoations {
-    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.photos count]];
-    for (NSDictionary *photo in self.photos) {
-        [annotations addObject:[FlickrPhotoAnnotation annotationForPhoto:photo]];
-    }
-    return annotations;
-}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"Photo"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
         [segue.destinationViewController setPhoto:photo];
-    } else if ([segue.identifier isEqualToString:@"PhotosMap"]) {
-        [segue.destinationViewController setDelegate:self];
-        [segue.destinationViewController setAnnotations:[self mapAnnoations]];
     }
     
 }
@@ -99,17 +76,5 @@
     
     return cell;
 }
-
-- (PhotoViewController *)splitViewPhotoViewController {
-    id pvc = [self.splitViewController.viewControllers lastObject];
-    if (![pvc isKindOfClass:[PhotoViewController class]]) pvc = nil;
-    return pvc;
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self splitViewPhotoViewController].photo = [self.photos objectAtIndex:indexPath.row];
-}
-
 
 @end
