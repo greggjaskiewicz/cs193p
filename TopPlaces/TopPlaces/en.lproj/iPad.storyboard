@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="bHr-ys-ohR">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
@@ -125,7 +126,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OWh-PG-Diz"/>
+                    <navigationItem key="navigationItem" id="OWh-PG-Diz">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="xJN-WN-Tfp">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="BJZ-xE-Bgj">
+                                <rect key="frame" x="113" y="7" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="zdJ-wt-lfO" eventType="valueChanged" id="x3Q-4k-bKC"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
                         <outlet property="mapView" destination="vyI-vE-c7j" id="NvS-l7-mg0"/>
@@ -242,7 +258,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="302" y="-303"/>
+            <point key="canvasLocation" x="748" y="-309"/>
         </scene>
         <!--Photos Map View Controller-->
         <scene sceneID="POh-i1-7fb">
@@ -260,7 +276,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="C28-oN-J4G"/>
+                    <navigationItem key="navigationItem" id="C28-oN-J4G">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="m6W-kN-VJD">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="zzo-Zy-RTa">
+                                <rect key="frame" x="113" y="7" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satelitte"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="prz-vM-5WP" eventType="valueChanged" id="FHA-ed-ncm"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
                         <outlet property="mapView" destination="QQd-ZV-1no" id="e07-p2-pft"/>
@@ -369,7 +400,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LP9-d4-JIO"/>
         <segue reference="OhA-rE-N71"/>
+        <segue reference="Ss2-89-LXa"/>
     </inferredMetricsTieBreakers>
 </document>

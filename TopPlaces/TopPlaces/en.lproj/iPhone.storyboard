@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="TwM-67-DBb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="TwM-67-DBb">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Recent Photos Table View Controller - Recent-->
         <scene sceneID="cUe-Gy-x2l">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVQ-d9-jN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -59,6 +61,7 @@
             </objects>
             <point key="canvasLocation" x="1118" y="25"/>
         </scene>
+        <!--Places Map View Controller-->
         <scene sceneID="CZG-Lh-oj6">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDB-kh-o1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,7 +77,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xxQ-oE-JW6"/>
+                    <navigationItem key="navigationItem" id="xxQ-oE-JW6">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="tPe-6O-Kji">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jxa-1u-mUq">
+                                <rect key="frame" x="115" y="7" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satelitte"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="J4V-Ur-AQv" eventType="valueChanged" id="ryw-wZ-MZ0"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Fm2-t4-3lq" id="v9v-Ip-XVQ"/>
                         <segue destination="7Og-Fg-f6w" kind="push" identifier="MapPhotos" id="mqW-qi-Rrd"/>
@@ -83,6 +101,7 @@
             </objects>
             <point key="canvasLocation" x="1118" y="-1150"/>
         </scene>
+        <!--Places Table View Controller - Top Places-->
         <scene sceneID="To4-j6-DTJ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBd-6f-bFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,6 +156,7 @@
             </objects>
             <point key="canvasLocation" x="656" y="-845"/>
         </scene>
+        <!--Photos Table View Controller - Photos-->
         <scene sceneID="1x0-GE-rbs">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8K-Nh-XMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,6 +211,7 @@
             </objects>
             <point key="canvasLocation" x="1118" y="-551"/>
         </scene>
+        <!--Photo View Controller - Photo-->
         <scene sceneID="p0K-dC-T9U">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrT-Dg-lBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,6 +242,7 @@
             </objects>
             <point key="canvasLocation" x="1982" y="25"/>
         </scene>
+        <!--Photos Map View Controller-->
         <scene sceneID="GwL-eW-eNd">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSf-aI-qTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,7 +258,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hM9-4A-okX"/>
+                    <navigationItem key="navigationItem" id="hM9-4A-okX">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Mx1-y2-d4D">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="4dD-hH-nnb">
+                                <rect key="frame" x="115" y="7" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="3ZK-7h-jBa" eventType="valueChanged" id="rtn-W1-jq8"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="f8l-ul-PdQ" id="nDv-zD-cer"/>
                         <segue destination="bXY-4d-ash" kind="push" identifier="MapPhoto" id="Fag-vV-b35"/>
@@ -245,6 +282,7 @@
             </objects>
             <point key="canvasLocation" x="1715" y="-551"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="0EN-jK-yOb">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0UE-h7-Ni4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,6 +301,7 @@
             </objects>
             <point key="canvasLocation" x="-382" y="-263"/>
         </scene>
+        <!--Navigation Controller - Top Places-->
         <scene sceneID="I3G-gy-LhG">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faD-Jj-5DW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,6 +320,7 @@
             </objects>
             <point key="canvasLocation" x="152" y="-551"/>
         </scene>
+        <!--Navigation Controller - Recent-->
         <scene sceneID="Tar-xQ-bvm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bpc-jS-2H8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -312,6 +352,7 @@
             <relationships>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
         <class className="PhotosMapViewController" superclassName="MapViewController">
@@ -338,6 +379,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="mqW-qi-Rrd"/>
         <segue reference="VQ9-N6-LeR"/>
-        <segue reference="0hQ-Pa-HPh"/>
+        <segue reference="Fag-vV-b35"/>
     </inferredMetricsTieBreakers>
 </document>

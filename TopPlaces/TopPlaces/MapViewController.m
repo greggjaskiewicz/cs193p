@@ -17,6 +17,22 @@
 @synthesize annotations = _annotations;
 @synthesize mapView = _mapView;
 
+- (IBAction)changeMapType:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0: {
+            self.mapView.mapType = MKMapTypeStandard;
+            break;
+        } 
+        case 1: {
+            self.mapView.mapType = MKMapTypeSatellite;
+            break;
+        } 
+        default: {
+            self.mapView.mapType = MKMapTypeHybrid;
+            break;
+        } 
+    }
+}
 
 - (void)updateMapView {
     if (self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];

@@ -94,6 +94,16 @@
             title = @"Unknown";
         }
     }
+    [GCD download:^{
+        UIImage *image = [UIImage imageWithData:[PhotoCache fetchThumbnail:photo]];
+        UITableViewCell *theCell = [tableView cellForRowAtIndexPath:indexPath];
+        if ([[tableView visibleCells] containsObject: theCell]) {
+            [GCD main:^{
+                theCell.imageView.image = image;
+                [theCell setNeedsLayout];
+            }];
+        }
+    }];
     cell.textLabel.text = title;
     cell.detailTextLabel.text = subtitle;
     
@@ -106,10 +116,8 @@
     return pvc;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self splitViewPhotoViewController].photo = [self.photos objectAtIndex:indexPath.row];
 }
-
 
 @end
